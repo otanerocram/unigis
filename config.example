@@ -1,0 +1,8 @@
+<?php
+
+$dbHost = "localhost";
+$dbPort = 3306;
+$dbName = "gts";
+$dbUser = "gts";
+$dbPass = "pass";
+$gpsProvider = "Enterprise";
