@@ -18,8 +18,6 @@ if ($conexion->connect_error) {
     die('Error de conectando a la base de datos: ' . $conexion->connect_error);
 }
 
-$endpointUrl = "http://hub.unisolutions.com.ar/hub/unigis/mapi/soap/gps/service.asmx?wsdl";
-
 $sqlQuery = "SELECT `posicionId`, `vehiculoId`, `velocidad`, `satelites`, `rumbo`, `latitud`, `longitud`, `altitud`, `gpsDateTime`, `statusCode`, `ignition`, `odometro`, `horometro`, `nivelBateria`, `estado` FROM `$dbTable` WHERE `estado`='Nuevo' ORDER BY `vehiculoId`, `posicionId` DESC LIMIT 100;";
 
 $resultado = $conexion->query($sqlQuery);

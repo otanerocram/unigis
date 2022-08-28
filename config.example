@@ -7,5 +7,6 @@ $dbUser = "gts";
 $dbPass = "pass";
 $gpsProvider = "replace_company";
 
+$endpointUrl = "http://hub.unisolutions.com.ar/hub/unigis/mapi/soap/gps/service.asmx?wsdl";
 $unigisUser = "replace_user";
 $unigisPass = "replace_pass";
