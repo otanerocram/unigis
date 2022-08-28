@@ -20,8 +20,10 @@ if ($conexion->connect_error) {
 
 $endpointUrl = "http://hub.unisolutions.com.ar/hub/unigis/mapi/soap/gps/service.asmx?wsdl";
 
-$unigisUser = "Sercom";
-$unigisPass = "CZW924ncw";
+$sqlQuery = "SELECT `posicionId`, `vehiculoId`, `velocidad`, `satelites`, `rumbo`, `latitud`, `longitud`, `altitud`, `gpsDateTime`, `statusCode`, `ignition`, `odometro`, `horometro`, `nivelBateria`, `estado` FROM `$dbTable` WHERE `estado`='Nuevo' ORDER BY `vehiculoId`, `posicionId` DESC LIMIT 100;";
+
+$resultado = $conexion->query($sqlQuery);
+
 $responseData = array();
 $placas = array();
 $SqlUpdate = "";
@@ -30,10 +32,6 @@ $devicesCount = 0;
 $enableUpdate = true;
 $placaTemp = "";
 $xmlTracks = "";
-
-$sqlQuery = "SELECT `posicionId`, `vehiculoId`, `velocidad`, `satelites`, `rumbo`, `latitud`, `longitud`, `altitud`, `gpsDateTime`, `statusCode`, `ignition`, `odometro`, `horometro`, `nivelBateria`, `estado` FROM `$dbTable` WHERE `estado`='Nuevo' ORDER BY `vehiculoId`, `posicionId` DESC LIMIT 100;";
-
-$resultado = $conexion->query($sqlQuery);
 
 if ($resultado->num_rows > 0) {
 

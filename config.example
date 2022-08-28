@@ -5,4 +5,7 @@ $dbPort = 3306;
 $dbName = "gts";
 $dbUser = "gts";
 $dbPass = "pass";
-$gpsProvider = "Enterprise";
+$gpsProvider = "replace_company";
+
+$unigisUser = "replace_user";
+$unigisPass = "replace_pass";
